@@ -1,0 +1,36 @@
+
+
+.filtersConteiner {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: white;
+  background-color: rgb(46, 60, 100);
+  height: 50px;
+ 
+}
+.navbar-menu{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 800px;
+  height: 30px; 
+}
+
+.habitaciones{
+   margin: 0px 10px;
+}
+.precio{
+  margin: 0px 10px;
+}
+.pais{
+  margin: 0px 10px;
+}
+
+.finalDate{
+  margin: 0px 10px;
+}
+
+.initialDate{
+  margin: 0px 10px;
+}

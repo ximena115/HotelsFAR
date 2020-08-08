@@ -1,0 +1,46 @@
+
+.card {
+  
+  border-radius: 10px;
+  width: 300px;
+  margin:10px;
+  box-sizing: border-box;
+  
+}
+
+img {
+  width: 298px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.cardsContainer{
+  display:flex;
+  flex-flow: row wrap;
+  margin: 5px;
+  justify-content:center;
+  height: 100vh;
+  width: 100vw;
+  
+  
+  
+}
+
+.info{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  
+
+}
+
+.infoContent{
+  
+  margin: 5px;
+
+}
+
+
+
+
+
