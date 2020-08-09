@@ -1,14 +1,16 @@
 class App extends React.Component {
   state = {
     hoteles: hotelsData,
-    fechaInicial: today.toLocaleTimeString(),
+    initialDate: "",
+    finalDate: "",
   };
   
   render() {
-   const {fechaInicial,hoteles} = this.state
+   const {initialDate,hoteles} = this.state
+   console.log(initialDate)
     return (
       <div>
-       <Header fecha={fechaInicial}/> 
+       <Header date={initialDate}/> 
        <Filters/>
        <CardsContainer data={hoteles}/>
       </div>

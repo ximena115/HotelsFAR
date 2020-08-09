@@ -1,6 +1,19 @@
 class Filters extends React.Component {
-
+  state={
+    initialDate:"",
+  }
+  
+  handleInput= (e) => {
+      this.setState(
+        {
+          [e.target.name]: e.target.value
+        }
+      )
+      
+  }
+  
   render() {
+    console.log(this.state.initialDate)
     return (
       <nav
         className="filtersConteiner"
@@ -13,7 +26,8 @@ class Filters extends React.Component {
                className="input is-small "
                type="date" 
                name="initialDate" 
-               
+               value={this.state.initialDate}
+               onChange={this.handleInput}
               />
           </div>
           <div className="finalDate">
