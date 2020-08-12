@@ -15,19 +15,21 @@ class App extends React.Component {
     })
     
 }
-  render() {
-   const { finalDate, date ,hoteles } = this.state
-   //console.log("App "+date )
+  render() { 
+
+   const { date ,hoteles } = this.state
+   
     return (
       <div>
        <Header 
           date={date} 
-          
        /> 
        <Filters 
           onChange={this.handleInput} 
+          data={hoteles}
        />
-       <CardsContainer data={hoteles}/>
+       <CardsContainer  
+          data={hoteles}/>
       </div>
        )}
 }
