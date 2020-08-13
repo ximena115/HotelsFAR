@@ -1,7 +1,7 @@
 class App extends React.Component {
   state = {
     hoteles: hotelsData,
-    date : {},
+    date : {}
 
   };
     
