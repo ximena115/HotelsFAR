@@ -1,6 +1,6 @@
 class Card extends React.Component {
     render() {
-const  {name, photo, description, city, country, price, rooms} = this.props
+        const  {name, photo, description, city, country, price, rooms} = this.props
       return (
         <div className="card">
           <div className="card-image">

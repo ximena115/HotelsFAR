@@ -1,35 +1,36 @@
 class App extends React.Component {
   state = {
-    hoteles: hotelsData,
-    date : {}
+    hotels: hotelsData,
+    filtersInfo : {}
 
   };
     
   handleInput= (e) => {
     e.persist()   
     this.setState({
-      date : {
-        ...this.state.date ,
+      filtersInfo : {
+        ...this.state.filtersInfo ,
         [e.target.name]: e.target.value
       }
     })
     
 }
   render() { 
-
-   const { date ,hoteles } = this.state
-   
+    
+   const { filtersInfo, hotels } = this.state
+    console.log(this.state)
     return (
       <div>
        <Header 
-          date={date} 
+          filtersInfo={filtersInfo} 
        /> 
        <Filters 
           onChange={this.handleInput} 
-          data={hoteles}
+          data={hotels}
        />
        <CardsContainer  
-          data={hoteles}/>
+          data={hotels}
+       />
       </div>
        )}
 }
