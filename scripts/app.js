@@ -1,7 +1,13 @@
 class App extends React.Component {
   state = {
     hotels: hotelsData,
-    filtersInfo : {}
+    filtersInfo : {
+      initialDate: moment(),
+      finalDate: moment().add(15,"days"),
+      country:"",
+      price:"",
+      rooms:"",
+    }
 
   };
     
@@ -18,11 +24,15 @@ class App extends React.Component {
   render() { 
     
    const { filtersInfo, hotels } = this.state
+   let hideMessage = false
     console.log(this.state)
     return (
       <div>
        <Header 
           filtersInfo={filtersInfo} 
+          hideMessage={hideMessage}
+
+
        /> 
        <Filters 
           onChange={this.handleInput} 
