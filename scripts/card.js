@@ -1,6 +1,7 @@
 class Card extends React.Component {
     render() {
         const  {name, photo, description, city, country, price, rooms} = this.props
+        //console.log(price)
       return (
         <div className="card">
           <div className="card-image">
@@ -16,13 +17,23 @@ class Card extends React.Component {
             </div>
 
             <div className="content">
-            
               <p>{description}</p>
-              <h4>{`${city}, ${country}. `}</h4>
-              <h4>Habitaciones: {rooms}</h4>
-              <h4>{price}</h4>
+              <div className="info">
+                <h4 className="infoContent">
+                  <i className="fas fa-map-marked-alt"></i>
+                  {`${city}, ${country}. `}
+                </h4>
+              </div>
+              <div className="info">
+                <h4 className="infoContent">
+                  <i className="fas fa-bed"></i>
+                  Habitaciones: {rooms}
+                </h4>
+              </div>
+              <Price price={price} />
             </div>
           </div>
+          <button ><h4 className="subtitle is-5 has-text-light">Reservar</h4></button>
         </div>
       );
     }

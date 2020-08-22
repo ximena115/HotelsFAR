@@ -53,7 +53,7 @@ class Filters extends React.Component {
             />
           </div>
           <div className="select is-small">
-            <select className="country" onChange={onChange} name="country">
+            <select className="country" onChange={onChange} name="country" >
               <option>Todos los paises</option>
                 {uniqueCountry.map((x) => (
                   <option key={x} value={x}>

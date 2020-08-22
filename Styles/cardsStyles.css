@@ -2,9 +2,10 @@
 .card {
   
   border-radius: 10px;
-  width: 300px;
+  width: 400px;
   margin:10px;
   box-sizing: border-box;
+  box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.603);
   
 }
 
@@ -25,20 +26,61 @@ img {
   
 }
 
-.info{
+/*.info{
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   
 
-}
+}*/
 
-.infoContent{
+/*.infoContent{
   
   margin: 5px;
 
+}*/
+
+.info{
+  display: flex;
+  flex-flow: row wrap;
+
+ margin-top: 5px;
+ 
+
 }
+
+.infoContent{
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(46, 60, 100, 0.164) ;
+  box-shadow: 0px 5px 8px 1px black;
+  border-radius: 5px;
+ 
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  
+}
+.fas{
+  margin-right: 5px;
+}
+
+button{
+  width: 400px;
+  height: 50px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: teal;
+  border-width:0px;  
+  border-bottom-style:none;
+
+  
+}
+
 
 
 
