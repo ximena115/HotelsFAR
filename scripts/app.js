@@ -1,79 +1,54 @@
 class App extends React.Component {
   state = {
     hotels: hotelsData,
-    filtersInfo : {
+    filtersInfo: {
       initialDate: moment(),
-      finalDate: moment().add(15, 'days'),
-      country:"",
-      price:"",
-      rooms:"",
-    }
-
+      finalDate: moment().add(15, "days"),
+      country: "",
+      price: "",
+      rooms: "",
+    },
   };
-    
+
   handleInput = (e) => {
-    e.persist()   
+    e.persist();
     this.setState({
-      filtersInfo : {
-        ...this.state.filtersInfo ,
-        [e.target.name]: e.target.value
-         
-        
-      }
-     
-    }) 
-    //selection(filtersInfo);
-  
-   //console.log(selection(hotels,filtersInfo));
-}   
+      filtersInfo: {
+        ...this.state.filtersInfo,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
 
 
-// selection = (p,f) => {
-  // this.state.hotels.filter( obj => obj.country === selectionData.country )
-  //p.filter( obj => obj.country === f.country )
-//}
 
-  render() { 
-    
-    
-   const { filtersInfo, hotels } = this.state 
-   //let selection =hotels;
-   //if (filtersInfo.country!="" ) {
-   // selection=  hotels.filter( obj => obj.country === filtersInfo.country &&  obj.price === filtersInfo.price) 
-   //} else {
-     
-  // }
-  let selection= hotels
-  if (filtersInfo.country!="") {
-    selection=  hotels.filter( obj => obj.country === filtersInfo.country)
+  render() {
+    const { filtersInfo, hotels } = this.state;
+    console.log(filtersInfo.price);
 
-    if (filtersInfo.price!="") {
-      selection=  hotels.filter( obj => obj.price === filtersInfo.price)
-    }
-  }else{
-    selection= hotels
+    let selection = hotels;
 
-  }
-    
- 
-   console.log(selection);
-   console.log(hotels);
+    selection = hotels.filter(
+      (obj) =>
+        (filtersInfo.country ? obj.country === filtersInfo.country : true) &&
+        (filtersInfo.price ? obj.price == filtersInfo.price : true) &&
+        (filtersInfo.rooms == 1
+          ? obj.rooms <= 10
+          : filtersInfo.rooms == 2
+          ? obj.rooms > 10 && obj.rooms <= 2
+          : filtersInfo.rooms == 3
+          ? obj.rooms > 20
+          : true)
+    );
 
-   // console.log(filtersInfo)
     return (
       <div>
-       <Header 
-          filtersInfo={filtersInfo} 
-       /> 
-       <Filters 
-          onChange={this.handleInput} 
-          data={hotels}
-       />
-       <CardsContainer  
-          data={selection}
-       />
+        <Header filtersInfo={filtersInfo} />
+        <Filters onChange={this.handleInput} data={hotels} />
+        <CardsContainer data={selection} />
       </div>
-       )}
+    );
+  }
 }
 
 const root = document.getElementById("app");

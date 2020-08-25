@@ -19,21 +19,21 @@ class Card extends React.Component {
             <div className="content">
               <p>{description}</p>
               <div className="info">
-                <h4 className="infoContent">
+                <h5 className="infoContent">
                   <i className="fas fa-map-marked-alt"></i>
                   {`${city}, ${country}. `}
-                </h4>
+                </h5>
               </div>
               <div className="info">
-                <h4 className="infoContent">
+                <h5 className="infoContent">
                   <i className="fas fa-bed"></i>
                   Habitaciones: {rooms}
-                </h4>
+                </h5>
               </div>
-              <Price price={price} />
+              <Price cost={price} />
             </div>
           </div>
-          <button ><h4 className="subtitle is-5 has-text-light">Reservar</h4></button>
+          <button ><h5 className="subtitle is-5 has-text-light">Reservar</h5></button>
         </div>
       );
     }

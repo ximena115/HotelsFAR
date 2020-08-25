@@ -3,7 +3,7 @@ class Filters extends React.Component {
  
   
   render() {
-    const { onChange, initialDate, finalDate, data } = this.props
+    const { onChange, initialDate, finalDate, data, cost } = this.props
 
     //console.log(data)
    
@@ -14,16 +14,31 @@ class Filters extends React.Component {
 
     const paises = []
     data.map(x=> paises.push (x.country))   
-    const uniqueCountry = paises.filter(unique)
+    const uniqueCountry = paises.filter(unique).sort()
     
     const price = []
     data.map(x=> price.push (x.price))
-    const uniquePrice = price.filter(unique)
+    const uniquePrice = price.filter(unique).sort()
 
     const rooms = []
     data.map(x=> rooms.push (x.rooms))
-    const uniqueRooms = rooms.filter(unique)
+    const uniqueRooms = rooms.filter(unique).sort()
     
+    //console.log(uniquePrice)
+    
+    
+
+    const sign = (price) => {
+      let dollarSing = [];
+      for (var i = 0; i < price; i++) {
+        dollarSing.push("$");
+      }
+      return dollarSing
+    } 
+
+   
+    
+    //console.log(dollarSing)
 
  
 
@@ -54,7 +69,7 @@ class Filters extends React.Component {
           </div>
           <div className="select is-small">
             <select className="country" onChange={onChange} name="country" >
-              <option>Todos los paises</option>
+              <option value="">Todos los paises</option>
                 {uniqueCountry.map((x) => (
                   <option key={x} value={x}>
                     {x}
@@ -65,22 +80,21 @@ class Filters extends React.Component {
 
           <div className="select is-small">
             <select className="price" onChange={onChange} name="price">
-              <option>Cualquier precio</option>
-                {uniquePrice.map((x) => (
-                  <option key={x} value={x}>
-                    {x}
+              <option value= "" >Cualquier precio</option>
+                {uniquePrice.map((price) => (
+                  <option key={price} value={price}> 
+                    {sign(price)}
                   </option>
               ))}
             </select>
           </div>
           <div className="select is-small">
             <select className="rooms" onChange={onChange} name="rooms">
-              <option>Calquier tamaño</option>
-                {uniqueRooms.map((x) => (
-                  <option key={x} value={x}>
-                  {x}
-                </option>
-              ))}
+            <option value="">Todos Los Tamaños</option>
+              <option value="1">Hotel Pequeño</option>
+              <option value="2">Hotel Mediano</option>
+              <option value="3">Hotel Grande</option>               
+             
             </select>
           </div>
         </div>

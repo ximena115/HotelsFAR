@@ -1,17 +1,17 @@
 class Price extends React.Component {
   render() {
-    const { price } = this.props;
+    const { cost } = this.props;
 
-    let icons = [];
-    for (var i = 0; i < price; i++) {
-      if (i >= price) {
+    let dollarSing = [];
+    for (var i = 0; i < cost; i++) {
+      if (i >= cost) {
       }
-      icons.push(<i className="fas fa-dollar-sign" key={i}></i>);
+      dollarSing.push(<i className="fas fa-dollar-sign" key={i}></i>);
     }
-    console.log(price);
+   
     return (
       <div className="info">
-        <h4 className="infoContent">{icons}</h4>
+        <h4 className="infoContent">{dollarSing}</h4>
       </div>
     );
   }
