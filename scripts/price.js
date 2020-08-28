@@ -8,7 +8,7 @@ class Price extends React.Component {
       }
       dollarSing.push(<i className="fas fa-dollar-sign" key={i}></i>);
     }
-   
+
     return (
       <div className="info">
         <h4 className="infoContent">{dollarSing}</h4>

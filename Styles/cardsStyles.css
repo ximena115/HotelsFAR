@@ -2,10 +2,13 @@
 .card {
  display: flex;
  flex-direction: column;
+ position: relative;
+
  
   
   border-radius: 10px;
   width: 400px;
+  height:  810px ;
   margin:10px;
   box-sizing: border-box;
   
@@ -21,31 +24,21 @@ img {
   display:flex;
   flex-flow: row wrap;
   justify-content:center;
-  height: 100vh;
- 
+  padding: 25px;
+  
+  
+  
   
   
   
 }
 
-/*.info{
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  
 
-}*/
-
-/*.infoContent{
-  
-  margin: 5px;
-
-}*/
 
 .info{
   display: flex;
   flex-flow: row wrap;
+ 
 
  margin-top: 5px;
  
@@ -60,6 +53,7 @@ img {
   background-color: rgba(46, 60, 100, 0.164) ;
   box-shadow: 0px 5px 8px 1px black;
   border-radius: 5px;
+
  
 }
 
@@ -73,13 +67,16 @@ img {
   
 }
 
+
 button{
   width: 400px;
   height: 50px;
   border-radius: 0px 0px 10px 10px;
   background-color: teal;
   border-width:0px;  
-  border-bottom-style:none;
+  border-bottom-style:none; 
+  position: absolute;
+  bottom: 0;
   
 
   

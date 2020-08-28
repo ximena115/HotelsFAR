@@ -20,14 +20,11 @@ class App extends React.Component {
     });
   };
 
-
-
   render() {
     const { filtersInfo, hotels } = this.state;
-    console.log(filtersInfo.price);
 
     let selection = hotels;
-
+    let selectionD;
     selection = hotels.filter(
       (obj) =>
         (filtersInfo.country ? obj.country === filtersInfo.country : true) &&
@@ -40,12 +37,20 @@ class App extends React.Component {
           ? obj.rooms > 20
           : true)
     );
+    selectionD = selection.filter(
+      (obj) =>
+        moment(obj.availabilityFrom).isSameOrBefore(
+          filtersInfo.initialDate,
+          "day"
+        ) &&
+        moment(obj.availabilityTo).isSameOrAfter(filtersInfo.finalDate, "day")
+    );
 
     return (
       <div>
         <Header filtersInfo={filtersInfo} />
         <Filters onChange={this.handleInput} data={hotels} />
-        <CardsContainer data={selection} />
+        <CardsContainer data={selectionD} />
       </div>
     );
   }
